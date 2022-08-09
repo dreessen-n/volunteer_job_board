@@ -19,6 +19,11 @@ Users can signup for volunteer jobs.
 Users info will not show on the job description unless they are the organizer
 of the volunteer job. This is for privacy. Only users first name will show.
 
+### Primary Roles:
+
+David Gonzales: Front End
+
+Neal Dreessen: Back End
 
 ### MVP requirements:
 
