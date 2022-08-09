@@ -6,6 +6,20 @@ For our group project, David suggested a chores job board. I was excited by the 
 becuase I work for a non-profit and we do volunteer job signup all the time. I
 suggested we alter the project to be for volunteer jobs, rather than chores, and he agreed. 
 
+## App description:
+
+The App will be a site for people to look for and create volunteer jobs.
+
+People will have to register to see the site.
+
+Users can create volunteer jobs.
+
+Users can signup for volunteer jobs.
+
+Users info will not show on the job description unless they are the organizer
+of the volunteer job. This is for privacy. Only users first name will show.
+
+
 ### MVP requirements:
 
 Project will be written in: Python, Flask, HTML, CSS and JavaScript
@@ -27,3 +41,4 @@ Also it will use bcrypt, RegEx, validation, session, flash, jinja2
 
 1. Email integration for update and notification
 2. Google Maps API for directions and locations
+3. Admin verification of new job postings, security to makes sure legit user
