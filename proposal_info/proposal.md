@@ -8,5 +8,8 @@ suggested we alter the project to be for volunteer jobs, rather than chores, and
 
 ### MVP requirements:
 
-1. 
+1. project on GitHub
+2. will have .gitignore
+3. 
+
 
