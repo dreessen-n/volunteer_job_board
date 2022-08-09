@@ -28,8 +28,10 @@ Also it will use bcrypt, RegEx, validation, session, flash, jinja2
 1. Project on GitHub
 2. Project will have .gitignore
 3. Project will have CRUD functionality on non user table
-4. Login and Registration with validations
-5. Protected routes
+4. CSS implemented and possible other static content
+5. Data is validated upon creation and edit, errors show
+6. Login and Registration with validations
+7. Protected routes
 
 ### Bonus requirements:
 
