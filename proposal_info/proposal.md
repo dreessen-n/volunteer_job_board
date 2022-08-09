@@ -23,6 +23,7 @@ of the volunteer job. This is for privacy. Only users first name will show.
 ### MVP requirements:
 
 Project will be written in: Python, Flask, HTML, CSS and JavaScript
+
 Also it will use bcrypt, RegEx, validation, session, flash, jinja2
 
 1. Project on GitHub
