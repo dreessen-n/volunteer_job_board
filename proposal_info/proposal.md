@@ -8,8 +8,11 @@ suggested we alter the project to be for volunteer jobs, rather than chores, and
 
 ### MVP requirements:
 
-1. project on GitHub
-2. will have .gitignore
-3. 
+1. Project on GitHub
+2. Project will have .gitignore
+3. Project will have CRUD functionality on non user table
+4. Login and Registration with validations
+5. Protected routes
+
 
 
