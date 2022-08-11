@@ -32,13 +32,6 @@ def create_new_job():
     job.Job.create_job(data)
     return redirect('/dashboard')
 
-# @app.route('/job/like', methods=['POST'])
-# def add_like_job():
-#     """Like the job"""
-#     job.Job.like(request.form)
-#     return redirect('/dashboard')
-
-
 @app.route('/job/new')
 def job_new():
     """Display the form to create a new job"""
@@ -155,9 +148,4 @@ def delete_job(job_id):
     job.Job.delete_job(data)
     # Redirect back to dashboard after deletion
     return redirect('/dashboard')
-
-# @app.route('/job/unlike', methods=['POST'])
-# def un_like_job():
-#     job.Job.unlike(request.form)
-#     return redirect('/dashboard')
 
