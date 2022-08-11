@@ -21,9 +21,9 @@ of the volunteer job. This is for privacy. Only users first name will show.
 
 ### Primary Roles:
 
-David Gonzales: Front End
+David Gonzales: Front End and will do the demo for the class
 
-Neal Dreessen: Back End
+Neal Dreessen: Back End and did the wireframe and ERD for the proposal
 
 ### MVP requirements:
 
