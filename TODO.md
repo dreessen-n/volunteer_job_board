@@ -15,5 +15,4 @@ show for when enough volunteers are signed up.~~ This can be styled but
 functionality is there.
 
 5. Need logic to not display closed (enough volunteers signed up) jobs on dashboard.
-But if someone takes them selves off the list, the job should open again. (neal
-might work this one)
+But if someone takes them selves off the list, the job should open again.
