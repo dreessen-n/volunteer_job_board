@@ -64,26 +64,20 @@
                             <a class="btn  btn-primary" href="/job/edit/{{one_job.id}}" role="button">edit job</a>
                             {% endif %}
                             <!-- signup button -->
-                            <!-- if user is signuped; they see button to
-                                unsignup -->
                             {% if session['id'] in signups | map(attribute='user_id') %}
-                                <form action="/signup/delete" method="POST">
-                                    <input type="hidden" name="job_id" value="{{one_job.id}}">
-                                    <input type="hidden" name="user_id" value="{{session['id']}}">
-                                    <button type="submit" class="btn  btn-danger">remove from list</button>
-                                </form>
+                            <form action="/signup/delete" method="POST">
+                                <input type="hidden" name="job_id" value="{{one_job.id}}">
+                                <input type="hidden" name="user_id" value="{{session['id']}}">
+                                <button type="submit" class="btn  btn-danger">remove from list</button>
+                            </form>
                             {% else %}
-                            <!-- If signups == num_volunteers then signup btn
-                                doesn't display and says job full -->
-                                {% if (signups | length == one_job.num_volunteers) %}
-                                <p>Full - no more voluteers needed</p>
-                                {% else %}
-                                <form action="/signup" method="POST">
-                                    <input type="hidden" name="job_id" value="{{one_job.id}}">
-                                    <input type="hidden" name="user_id" value="{{session['id']}}">
-                                    <button type="submit" class="btn  btn-primary">signup</button>
-                                </form>
-                                {% endif %}
+                            {% if (signups | length == one_job.num_volunteers) %}
+                            {% else %}
+                            <form action="/signup" method="POST">
+                                <input type="hidden" name="job_id" value="{{one_job.id}}">
+                                <input type="hidden" name="user_id" value="{{session['id']}}">
+                                <button type="submit" class="btn  btn-primary">signup</button>
+                            </form>
                             {% endif %}
                         </td>
                     </tr>
