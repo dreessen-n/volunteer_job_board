@@ -10,5 +10,6 @@ Also need to figure out styling the input and display of both
 And closed if enought users have signed up.~~ This can be styled but
 functionality is there.
 
-4. The signup button show display if volunteers are needed or disappear and a label 
-show for when enough volunteers are signed up.
+~~4. The signup button show display if volunteers are needed or disappear and a label 
+show for when enough volunteers are signed up.~~ This can be styled but
+functionality is there
