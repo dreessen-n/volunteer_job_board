@@ -7,7 +7,8 @@ database. Also do we want to format the phone number coming in?
 Also need to figure out styling the input and display of both
 
 ~~3. Need to have the status say open on the show page if job not filled with volunteers
-And closed if enought users have signed up.~~
+And closed if enought users have signed up.~~ This can be styled but
+functionality is there.
 
 4. The signup button show display if volunteers are needed or disappear and a label 
 show for when enough volunteers are signed up.
