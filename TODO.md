@@ -1,4 +1,4 @@
-#TODO list:
+# TODO list:
 
 1. Phone number: not validated; opitonal at this point. Not sure about null in
 database. Also do we want to format the phone number coming in?
