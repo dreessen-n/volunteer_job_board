@@ -26,7 +26,7 @@
             <div class='row'>
                 <table>
                     <tr>
-                        {% if (signups | length == one_job.num_volunteers) %}
+                        {% if (signups | length >= one_job.num_volunteers) %}
                         <td>Status: FULL</td>
                         {% else %}
                         <td>Status: OPEN</td>
@@ -75,7 +75,7 @@
                             {% else %}
                             <!-- If signups == num_volunteers then signup btn
                                 doesn't display and says job full -->
-                                {% if (signups | length == one_job.num_volunteers) %}
+                                {% if (signups | length >= one_job.num_volunteers) %}
                                 <p>Full - no more voluteers needed</p>
                                 {% else %}
                                 <form action="/signup" method="POST">
