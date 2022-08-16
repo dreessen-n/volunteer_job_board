@@ -3,6 +3,7 @@ from re import A
 from flask_app import app
 # Import modules from flask
 from flask_app import Flask, render_template, request, redirect, session, url_for, flash, bcrypt
+from datetime import datetime
 
 # Import models class
 from flask_app.models import user, job
