@@ -5,7 +5,7 @@ from flask_app import Flask, render_template, request, redirect, session, url_fo
 
 # Import models class
 from flask_app.models import user, job, signup
-
+from datetime import datetime
 # CRUD CREATE ROUTES
 @app.route('/job/create', methods=['POST'])
 def create_new_job():

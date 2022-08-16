@@ -2,6 +2,7 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask_app import flash
 from flask_app.models import user
+from datetime import datetime
 
 """
 Change class construct, queries, and db for job
