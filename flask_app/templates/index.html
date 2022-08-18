@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
-    <title>INDEX</title>
+    <title>Call to Action</title>
   </head>
   <body>
-    <div class="indexContainer" style="background-image:url('https://images.unsplash.com/photo-1578062982426-fe3fbb719669?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2058&q=80');">
+    <div class="indexContainer">
         <!-- start of error messages -->
         <h1 class="siteTitle">CALL TO ACTION</h1>
         {% with messages = get_flashed_messages(with_categories=true) %}
@@ -90,7 +90,7 @@
                   </div>
               </div>
         </div>
-        <button type="button" class="indexBtn" id="toggle">Login - Register</button>
+        <button onclick="showForms()" type="button" class="indexBtn" id="toggle">Login - Register</button>
     </div>    
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
       <script type="text/javascript" src="{{ url_for('static', filename='/js/script.js') }}"></script>

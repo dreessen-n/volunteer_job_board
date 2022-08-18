@@ -8,22 +8,6 @@
         <title>new</title>
     </head>
     <body>
-        <!-- Error message section -->
-        {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-        <div class="container-errorMes">
-            <div class=flashes>
-                {% for category, message in messages %}
-                <div class="alert alert-{{ category }}" role="alert">
-                    {{ message }}
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        {% endif %}
-        {% endwith %}
-        <!-- End error message section -->
-
         <div class="containerCreate">
             <div class="navCreate">
                 <a class="navCreateBtn" href="/dashboard">Dashboard</a>
@@ -31,6 +15,21 @@
                 <a class="navCreateBtn" href="/logout">Logout</a>
             </div>
                 <div class="containerFormCreate">
+                <!-- Error message section -->
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                <div class="flashContainer">
+                    <div class=flashes>
+                        {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}" role="alert">
+                            {{ message }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+                {% endwith %}
+                <!-- End error message section -->
                 <form class="formCreate" action="/job/create" method="POST">
                     <label for="name">Name</label>
                     <input type="text" placeholder="job title" name="name" >
