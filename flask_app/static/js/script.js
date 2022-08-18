@@ -1,10 +1,11 @@
-const indexForms = document.getElementById('LogAndReg');
-
-let showFormBtn = document.getElementById('toggle');
 
 
+const closeBtn = document.getElementById('close');
+const openBtn = document.getElementById('open');
+const mainContainer = document.getElementById('containerShow');
 
-showFormBtn.onclick = function showForms(){
+function showForms(){
+    const indexForms = document.getElementById('LogAndReg');
     if(indexForms.className !== "LogAndReg"){
         indexForms.className = "LogAndReg";
     }
@@ -12,3 +13,15 @@ showFormBtn.onclick = function showForms(){
         indexForms.className = 'LogAndRegAnimate';
     }
 }
+
+closeBtn.onclick = function closeNav(){
+    mainContainer.classList.remove('show-nav');
+}
+openBtn.onclick = function openNav(){
+    mainContainer.classList.add('show-nav');
+}
+
+
+
+
+

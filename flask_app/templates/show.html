@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,114 +10,95 @@
     <title>show</title>
 </head>
 <body>
-    <div class="containerShow">
-            <div class="navBar">
-                <div class="nav">
-                    <a class="navShowBtn" href="/dashboard">Dashboard</a>
-                    <div class="organizedBy">
-                        <h2>{{ one_job.name }}</h2>
-                        <h3>Organized by {{ one_job.creator.first_name }}</h3>
-                    </div>
-                    <a class="navShowBtn" href="/logout">Logout</a>
+    <div class="containerShow" id="containerShow">
+        <div class="circle-container">
+            <div class="circle">
+                <button onclick="closeNav()" id="close">
+                    <i class="fas fa-times"></i>
+                </button>
+                <button onclick="openNav()" id="open">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="leftContent">
+                <h2 class="jobTitle0">J o b  +  T i t l e </h2>
+                <h2 class='jobTitle'>{{ one_job.name }}</h2>
+                <div class="jobImage">
                 </div>
             </div>
-            <div class='showTable'>
-                <table class="indJob">
-                    <tr>
+            <div class="rightContent">
+                <div class='showTable'>
+                    <ul class="showList">
                         {% if (signups | length >= one_job.num_volunteers) %}
-                        <td class="tdShow" >Status: FULL</td>
+                        <li class="tdShow"><span>Status:</span> FULL</li>
                         {% else %}
-                        <td class="tdShow">Status: OPEN</td>
+                        <li class="tdShow"><span>Status:</span> OPEN</li>
                         {% endif %}
-                    </tr>
-                    <tr>
-                        <td class="tdShow">Date: {{ one_job.date.strftime('%m-%d-%Y') }}</td>
-                    </tr>
-                    <tr>
-                        <td class="tdShow">Start Time: {{ one_job.start_time }}</td>
-                    </tr>
-                    <tr>
-                        <td class="tdShow">End Time: {{ one_job.end_time }}</td>
-                    </tr>
-                    <tr>
-                        <td class="tdShow">Number of Volunteers: {{ one_job.num_volunteers }}</td>
-                    </tr>
-                    <tr>
-                        <td class="tdShow">Location: {{ one_job.location }}</td>
-                    </tr>
-                    <tr>
-                        <td class="tdShow">Description: {{ one_job.description }}</td>
-                    </tr>
-                    <tr>
-                        <td class="tdShow">
-                            <div class="btnsShow">
-                                    <!-- delete button -->
-                                {% if session['id'] == one_job.creator.id %}
-                                <form action="/job/delete/{{one_job.id}}" method="POST">
-                                    <input type="hidden" name="id" value="{{one_job.id}}">
-                                    <button type="submit" class="btnShow">delete job</button>
-                                </form>
-                                {% endif %}
-                                <!-- Edit button -->
-                                {% if session['id'] == one_job.creator.id %}
-                                <a class="btnShow" href="/job/edit/{{one_job.id}}" role="button">edit job</a>
-                                {% endif %}
-                                <!-- signup button -->
-                                <!-- if user is signuped; they see button to
-                                    unsignup -->
-                                {% if session['id'] in signups | map(attribute='user_id') %}
-                                    <form action="/signup/delete" method="POST">
-                                        <input type="hidden" name="job_id" value="{{one_job.id}}">
-                                        <input type="hidden" name="user_id" value="{{session['id']}}">
-                                        <button type="submit" class="btnShow">remove from list</button>
-                                    </form>
-                                {% else %}
-                                <!-- If signups == num_volunteers then signup btn
-                                    doesn't display and says job full -->
-                                    {% if (signups | length >= one_job.num_volunteers) %}
-                                    <p>Full - no more voluteers needed</p>
-                                    {% else %}
-                                    <form action="/signup" method="POST">
-                                        <input type="hidden" name="job_id" value="{{one_job.id}}">
-                                        <input type="hidden" name="user_id" value="{{session['id']}}">
-                                        <button type="submit" class="btnShow">signup</button>
-                                    </form>
-                                    {% endif %}
-                                {% endif %}
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-                <h3 class="vol" >Volunteers</h3>
-                <table>
+                        {% if session['id'] in signups | map(attribute='user_id') %}
+                        <li class="tdShow"><form action="/signup/delete" method="POST">
+                            <input type="hidden" name="job_id" value="{{one_job.id}}">
+                            <input type="hidden" name="user_id" value="{{session['id']}}">
+                            <button type="submit" class="signDownBtn">Withdraw</button>
+                        </form></li>
+                        {% else %}
+                        <li class="tdShow">
+                            <form action="/signup" method="POST">
+                                <input type="hidden" name="job_id" value="{{one_job.id}}">
+                                <input type="hidden" name="user_id" value="{{session['id']}}">
+                                <button type="submit" class="signUpBtn">Sign-Up</button>
+                            </form>
+                        </li>
+                        {% endif %}
+                        <li class="tdShow"><span>Date:</span> {{ one_job.date.strftime('%m-%d-%Y') }}</li>
+                        <li class="tdShow"><span>Start Time:</span> {{ one_job.start_time }}</li>
+                        <li class="tdShow"><span>End Time:</span> {{ one_job.end_time }}</li>
+                        <li class="tdShow"><span>Number of Volunteers:</span> {{ one_job.num_volunteers }}</li>
+                        <li class="tdShow"><span>Location:</span> {{ one_job.location }}</li>
+                        <li class="tdShow"><span>Description:</span> {{ one_job.description }}</li>
+                    </ul>
+                    <h3 class="vol" >Volunteers</h3>
+                    <ul class="volunteers">
                     {% if session['id'] == one_job.creator.id %}
                     {%  for c in signups %}
-                    <tr class="signUpsRow">
-                        <td class="tdShow">
-                            {{c.users_who_signuped.first_name}} {{c.users_who_signuped.last_name}} |
-                        </td>
-                        <td class="tdShow">
-                            email: {{c.users_who_signuped.email}} |
-                        </td>
-                        <td class="tdShow">
-                            phone: {{c.users_who_signuped.phone}}
-                        </td>
-                    </tr>
+                        <li class="tdShowVol">
+                            <span class="volData">{{c.users_who_signuped.first_name}} {{c.users_who_signuped.last_name}} | email: {{c.users_who_signuped.email}} | phone: {{c.users_who_signuped.phone}}</span>
+                        </li>
                     {% endfor %}
                     {% else %}
                     {%  for c in signups %}
-                    <tr>
-                        <td class="tdShow">
-                            {{c.users_who_signuped.first_name}}
-                        </td>
-                    </tr>
+                        <li class="tdShow">
+                            <span class="volData">{{c.users_who_signuped.first_name}}</span>
+                        </li>
                     {% endfor %}
                     {% endif %}
-                </table>
+                    </ul>
+                </div>
+            </div>  
             </div>
     </div>
-    
-
+    <nav>
+        <ul>
+            <li><a class="btnShow" href="/dashboard">Dashboard</a></li>
+            <li><a class="btnShow" href="/logout">Logout</a></li>
+            <!-- delete button -->
+            {% if session['id'] == one_job.creator.id %}
+            <li> <form action="/job/delete/{{one_job.id}}" method="POST">
+                <input type="hidden" name="id" value="{{one_job.id}}">
+                <button type="submit" class="btnShow">Delete Job</button>
+            </form></li>
+            {% endif %}
+            <!-- Edit button -->
+            {% if session['id'] == one_job.creator.id %}
+            <li><a class="btnShow" href="/job/edit/{{one_job.id}}" role="button">Edit Job</a></li>
+            {% endif %}
+            <!-- signup button -->
+            <!-- if user is signuped; they see button to
+                unsignup -->
+            
+        </ul>
+    </nav>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='/js/script.js') }}"></script>
 </body>

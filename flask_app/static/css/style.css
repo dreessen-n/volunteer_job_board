@@ -10,6 +10,12 @@
     vertical-align: top;
     box-sizing: border-box;
     font-family: 'Alumni Sans Pinstripe', sans-serif;
+    font-weight: 700;
+}
+body{
+    background-color: #333;
+    color:#222;
+    overflow-x:hidden;
 }
 h3{
     overflow: hidden;
@@ -18,8 +24,8 @@ h3{
     display: flex;
     justify-content: center;
     overflow-x: hidden;
-
 }
+
 /* start of David G CSS */
 /* index */
 .indexContainer{
@@ -32,6 +38,8 @@ h3{
     flex-direction:column;
     align-items: center;
     justify-content:space-around;
+    background-image:url('https://images.unsplash.com/photo-1578062982426-fe3fbb719669?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2058&q=80');
+    background-size: cover;
 }
 .siteTitle{
     display: flex;
@@ -59,7 +67,7 @@ h3{
 }
 .LogAndRegAnimate {
     border-radius: 10pt;
-    height:40vh;
+    height:45vh;
     width:55vw;
     display: flex;
     align-items: center;
@@ -69,7 +77,6 @@ h3{
     -moz-transition: opacity .4s ease-in-out;
     -webkit-transition: opacity .4s ease-in-out;
 }
-
 .indexBtn{
     background-color: antiquewhite;
     color: #000;
@@ -93,10 +100,12 @@ h3{
     background-color: antiquewhite;
     color: #000;
     font-family: 'Alumni Sans Pinstripe', sans-serif;
+    font-size: 18px;
     border:none;
     border-radius: 10pt;
     height:20px;
     width:150px;
+    margin:10px;
     cursor:pointer;
     box-shadow:
     -1px -1px 0 #000,  
@@ -104,10 +113,12 @@ h3{
     -1px 1px 0 #000,
     1px 1px 0 #000;
 }
+
 .indexBtnLog{
     background-color: antiquewhite;
     color: #000;
     font-family: 'Alumni Sans Pinstripe', sans-serif;
+    font-size: 18px;
     border:none;
     border-radius: 10pt;
     margin-top:20px;
@@ -130,6 +141,24 @@ h3{
     justify-content: center;
     align-items: center;
     margin:35px;
+    cursor:pointer;
+
+    border-radius: 2pt;
+    width:130px;
+    height:35px;
+    font-size:18pt;
+}
+.btnShowDis{
+    background-color:grey;
+    border:none;
+    text-decoration: none;
+    color:black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:35px;
+    cursor:not-allowed;
 
     border-radius: 2pt;
     width:130px;
@@ -142,7 +171,6 @@ h3{
 .containerReg{
     color:white;
 }
-
 .form-control{
     background:transparent;
     border:none;
@@ -152,7 +180,6 @@ h3{
 .placeholder{
     color:antiquewhite;
 }
-
 .loginLabel{
     text-decoration: underline;
     font-size:20pt;
@@ -174,8 +201,10 @@ h3{
     justify-content: center;
     text-align: center;
 }
+input:focus{
+    background-color: antiquewhite;
+}
 /* dashboard */
-
 .containerDash{
     display:flex;
     flex-direction: column;
@@ -204,6 +233,12 @@ h3{
     width:98vw;
     height:120px;
     font-family: 'Exo', sans-serif;
+
+    box-shadow:
+    0px 0px 0 rgba(0, 0, 0, 0.424),  
+    0px 0px 0 rgba(0, 0, 0, 0.424),
+    6px 10px 0 rgba(0, 0, 0, 0.31),
+    0px 0px 0 rgba(0, 0, 0, 0.424);
 }
 .navDash{
     display:flex;
@@ -217,6 +252,9 @@ h3{
     border-top:solid white 1px;
     border-bottom:solid white 1px;
     font-family: 'Alumni Sans Pinstripe', sans-serif;
+}
+.navDashBtn:hover{
+    transform:scale(1.15);
 }
 .tableLabels{
     margin-top: 50px;
@@ -234,8 +272,6 @@ h3{
     justify-content: center;
     align-items: center;
 }
-
-
 p{
     font-size: 40pt;
     font-family: 'Alumni Sans Pinstripe', sans-serif;
@@ -260,22 +296,18 @@ p{
 ::-webkit-scrollbar {
     width: 10px;
 }
-
   /* Track */
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: antiquewhite;
 }
-
   /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: rgba(136, 136, 136, 0.088);
 }
-
   /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
-
 .viewJob{
     color:black;
     font-family: 'Alumni Sans Pinstripe', sans-serif;
@@ -285,6 +317,13 @@ p{
 .table{
     border-collapse: separate;
     border-spacing: 0 12px;
+    border-radius: 4pt;
+    
+    box-shadow:
+    0px 0px 0 rgba(0, 0, 0, 0.424),  
+    0px 0px 0 rgba(0, 0, 0, 0.424),
+    8px 12px 0 rgba(0, 0, 0, 0.165),
+    0px 0px 0 rgba(0, 0, 0, 0.218);
 }
 .tdDash{
     font-size: 23.5pt;
@@ -294,9 +333,14 @@ p{
     font-family: 'Alumni Sans Pinstripe', sans-serif;
     border-bottom:solid antiquewhite 2px;
     border-right:solid antiquewhite 2px;
+    
 }
-.t:hover{
-    background-color: rgba(0, 0, 0, 0.454);
+.viewJob:hover{
+    text-shadow:
+    0px 0px 0 rgba(0, 0, 0, 0.424),  
+    0px 0px 0 rgba(0, 0, 0, 0.424),
+    1px 1px 0 rgba(0, 0, 0, 0.424),
+    0px 0px 0 rgba(0, 0, 0, 0.218);;
 }
 th{
     border:solid white;
@@ -305,7 +349,6 @@ th{
     height:40px;
     font-family: 'Alumni Sans Pinstripe', sans-serif;
 }
-
 .jobLabel{
     color:white;
     font-size:50pt;
@@ -316,9 +359,7 @@ th{
     font-size:30pt;
     font-family: 'Alumni Sans Pinstripe', sans-serif;
 }
-
 /* create and edit job styling */
-
 .containerCreate{
     overflow-x: hidden;
     display: flex;
@@ -379,41 +420,197 @@ input, textarea{
 label{
     font-size: 20pt;
 }
-
 /* style for displaying job details */
-
 .containerShow{
-    border:solid darkolivegreen 15px;
+    border:solid rgba(68, 138, 146, 0.49) 15px;
 
     height:100vh;
-    padding:30px;
     display:flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     background-color:blanchedalmond ;
-    background-image:url();
-    background-repeat:no-repeat;
-    background-size:100%;
-}
 
+    transform-origin: top left;
+    transition:transform 0.45s ease-in-out ;
+}
+.rightContent{
+    height:100vh;
+    width:50vw;
+    display:flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.leftContent{
+    height:100vh;
+    width:50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.jobTitle0{
+    color:rgba(0, 0, 0, 0.546);
+    font-size: 25pt;
+}
+.jobTitle{
+    width:40vw;
+    height:10vh;
+    border-bottom: rgba(0, 0, 0, 0.534) solid 2px;
+    border-right: rgba(0, 0, 0, 0.491) solid 2px;
+
+    margin-bottom:150px;
+    font-size: 40pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+    0px 0px 0 rgba(0, 0, 0, 0.424),  
+    0px 0px 0 rgba(0, 0, 0, 0.424),
+    6px 6px 0 rgba(0, 0, 0, 0.29),
+    0px 0px 0 rgba(0, 0, 0, 0.302);
+}
+.jobImage{
+    border:rgba(68, 138, 146, 0.576) 15px solid;
+    border-bottom:none;
+
+    height:60vh;
+    width:50vw;
+    margin-left:12px;
+    margin-bottom:25px;
+    border-radius:4pt;
+    background-image:url(https://images.unsplash.com/photo-1565206595640-6cfd90e0ae09?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80);
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size:100% 200%;
+
+    box-shadow:
+    0px 0px 0 rgba(0, 0, 0, 0.424),  
+    0px 0px 0 rgba(0, 0, 0, 0.424),
+    11px 2px 0 rgba(0, 0, 0, 0.424),
+    0px 0px 0 rgba(0, 0, 0, 0.424);
+}
+.containerShow.show-nav{
+    transform:rotate(-20deg);
+}
+.circle-container{
+    position:fixed;
+    top:-100px;
+    left: -100px;
+}
+.circle{
+    background-color: rgba(226, 157, 19, 0.493);
+    height: 250px;
+    width:250px;
+    border-radius: 50%;
+    position:relative;
+    transition: transform .45s ease-in-out;
+
+    box-shadow:
+    0px 0px 0 rgba(0, 0, 0, 0.424),  
+    0px 0px 0 rgba(0, 0, 0, 0.424),
+    8px 5px 0 rgba(0, 0, 0, 0.424),
+    0px 0px 0 rgba(0, 0, 0, 0.424);
+}
+.container.show-nav .circle{
+    transform: rotate(-70deg);
+}
+.circle button{
+    cursor:pointer;
+    position: absolute;
+    top:50%;
+    left:50%;
+    height:100px;
+    background: transparent;
+    border:0;
+    font-size: 26px;
+    color:white;
+}
+.circle button:focus{
+    outline:none;
+}
+.circle button#open{
+    left: 60%;
+}
+.circle button#close{
+    top:60%;
+    transform:rotate(90deg);
+    transform-origin:top left;
+}
+.containerShow.show-nav + nav li{
+    transform: translateX(0);
+    transition-delay:.3s;
+}
+nav{
+    position:fixed;
+    bottom: 10px;
+    left:-5px;
+    z-index:100;
+}
+nav {
+    list-style-type:none;
+    padding-left: 30px;
+}
+nav ul li{
+    color:white;
+    margin:40px 0;
+    transform:translateX(-100%);
+    transition:transform 0.4s ease-in-out;
+    cursor:pointer;
+}
+nav ul li + li{
+    margin-left:3px;
+    transform:translateX(-150%);
+    cursor:pointer;
+}
+nav ul li + li + li{
+    margin-left:10px;
+    transform:translateX(-250%);
+    cursor:pointer;
+}
+nav ul li + li + li +li{
+    margin-left:17px;
+    transform:translateX(-350%);
+    cursor:pointer;
+}
+nav ul li + li + li +li+li{
+    margin-left:24px;
+    transform:translateX(-450%);
+}
+nav ul li + li + li +li+li+li{
+    margin-left:31px;
+    transform:translateX(-550%);
+}
+.content{
+    width:100vw;
+    height:100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+.content h1{
+    margin:0;
+}
+.content small{
+    color: #555;
+    font-style:italic;
+}
+.content p{
+    color:#333;
+    line-height: 1.5;
+}
 .vol{
     font-size: 30pt;
 }
-.navBar{
-    display:flex;
-    justify-content: center;
-    width:100vw;
-}
-.nav{
+.volunteers{
+    height:30vh;
+    width:34.5vw;
+    overflow:scroll;
+    overflow-x: hidden;
     display: flex;
-    margin-right: 40px;
+    flex-direction: column;
 }
-.navShowBtn{
-    color:black;
-    font-size: 30pt;
-    font-family: 'Alumni Sans Pinstripe', sans-serif;
-}
+
 .organizedBy{
     width:70vw;
     font-size: 20pt;
@@ -422,29 +619,524 @@ label{
     text-align: center;
 }
 .showTable{
-    margin-bottom: 250px;
-    width:100vw;
+    height:92vh;
+    width:35vw;
+    border:solid 12px rgba(68, 138, 146, 0.49);
+    border-top: none;
+    border-radius:4pt;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    
+    box-shadow:
+    0px 0px 0 rgba(0, 0, 0, 0.424),  
+    0px 0px 0 rgba(0, 0, 0, 0.424),
+    12px 10px 0 rgba(0, 0, 0, 0.424),
+    0px 0px 0 rgba(0, 0, 0, 0.304);
+}
 
+ul.showList{
+    border-bottom: #000 solid;
+    padding:5px;
+    height:60vh;
+    width:34vw;
+    display:flex;
+    flex-direction: column;
 }
 .tdShow{
     border-radius: 2pt;
+    margin:16px;
     padding:5pt;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width:33vw;
-    height: 50px;
+    height: 5vh;
     font-size: 20pt;
 }
-.signUpsRow{
-    display: flex;
-    width:33vw;
-}
-.btnsShow{
+.signUpBtn{
+    background-color:rgba(0, 128, 0, 0.265);
+    border:none;
+    width:15vw;
+    height:3vh;
+    font-size: 16pt;
     display:flex;
-    justify-content: space-around;
+    border-radius: 4pt;
+    justify-content: center;
+    box-shadow:
+    0px 0px 0 rgba(0, 0, 0, 0.424),  
+    0px 0px 0 rgba(0, 0, 0, 0.424),
+    10px 5px 0 rgba(0, 0, 0, 0.321),
+    0px 0px 0 rgba(0, 0, 0, 0.24);
+}
+.signDownBtn{
+    background-color:rgba(255, 0, 0, 0.354);
+    border:none;
+    width:15vw;
+    height:3vh;
+    font-size: 16pt;
+    display:flex;
+    border-radius: 4pt;
+    justify-content: center;
+    box-shadow:
+    0px 0px 0 rgba(0, 0, 0, 0.424),  
+    0px 0px 0 rgba(0, 0, 0, 0.424),
+    10px 5px 0 rgba(0, 0, 0, 0.321),
+    0px 0px 0 rgba(0, 0, 0, 0.24);
+}
+span{
+    background-color:rgba(226, 157, 19, 0.493);
+    width:15vw;
+    display:flex;
+    border-radius: 4pt;
+    justify-content: center;
+    box-shadow:
+    0px 0px 0 rgba(0, 0, 0, 0.424),  
+    0px 0px 0 rgba(0, 0, 0, 0.424),
+    10px 5px 0 rgba(0, 0, 0, 0.321),
+    0px 0px 0 rgba(0, 0, 0, 0.24);
+}
+.volData{
+    margin:5px;
+    background-color:rgba(226, 157, 19, 0.493);
+    width:32vw;
+    display:flex;
+    border-radius: 4pt;
+    justify-content: center;
+}
+
+li{
+    text-align: center;
+}
+
+/* responsiveness using media queries */
+/* absolutely tiny*/
+@media only screen and (max-width:599px){
+        /* index */
+        .siteTitle{
+            font-size: 40px;
+        }
+        .LogAndRegAnimate{
+            width:100vw;
+        }
+        /* dashboard */
+        .containerDash{
+            background-size:100% 100% ;
+        }
+        .containerDashNav{
+            padding:10px;   
+        }
+        .navDashBtn{
+            font-size: 25pt;
+        }
+        .tableLabels{
+            padding:0px;
+        }
+        p{
+            font-size:25pt;
+            margin:15px;
+        }
+    .jobLabel{
+        font-size: 36pt;
+    }
+    .jobLabel0{
+        font-size: 18pt;
+    }
+    p{
+    display: none;
+    } 
+    .tdDash,.viewJob{
+        font-size: 12pt;
+    }
+    /* job creator and editor */
+    .formCreate{
+        width:100vw;
+        height:75vh;
+    }
+    .navCreateBtn{
+        font-size: 25pt;
+    }
+    .navCreateLabel{
+        font-size:45pt;
+    }
+    /* each job display */
+    .leftContent{
+        display: none;
+    }
+    .rightContent{
+        width:100vw;
+    }
+    .showTable{
+        width:100vw;
+        border:none;
+        box-shadow: none;
+    }
+    ul.showList{
+        height:45vh;
+        width:60vw;
+        overflow: scroll;
+        overflow-x: hidden;
+        margin-left:70px;
+        border:none;
+    }
+    .tdShow{
+        margin-top:30px;
+        font-size: 15pt;
+        width:50vw;
+    }
+    .volData{
+        width:80vw;
+        font-size: 16pt;
+    }
+    .volunteers{
+        width:90vw;
+    }
+    .btnShow{
+        transform:scale(.8);
+        margin:5px;
+    }
+}
+
+/* extra small */
+@media only screen and (min-width:600px){
+    /* index */
+    .siteTitle{
+        font-size: 40px;
+    }
+    .LogAndRegAnimate{
+        width:100vw;
+    }
+    /* dashboard */
+    .containerDash{
+        background-size:100% 100% ;
+    }
+    .containerDashNav{
+        padding:10px;   
+    }
+    .navDashBtn{
+        font-size: 25pt;
+    }
+    .tableLabels{
+        padding:0px;
+    }
+    p{
+        font-size:25pt;
+        margin:15px;
+    }
+    /* job creator and editor */
+    .formCreate{
+        width:100vw;
+        height:75vh;
+    }
+    .navCreateBtn{
+        font-size:30pt;
+    }
+    .navCreateLabel{
+        font-size:60pt;
+    }
+    
+    /* each job display */
+    .leftContent{
+        display: none;
+    }
+    .rightContent{
+        width:100vw;
+    }
+    .showTable{
+        width:100vw;
+        border:none;
+        box-shadow: none;
+    }
+    ul.showList{
+        height:45vh;
+        width:60vw;
+        overflow: scroll;
+        overflow-x: hidden;
+        margin-left:70px;
+        border:none;
+    }
+    .tdShow{
+        margin-top:30px;
+        font-size: 15pt;
+        width:50vw;
+    }
+    .volData{
+        width:80vw;
+        font-size: 16pt;
+    }
+    .volunteers{
+        width:90vw;
+    }
+    .btnShow{
+        transform:scale(.8);
+        margin:5px;
+    }
+}
+/* small */
+@media only screen and (min-width:600px){
+    .siteTitle{
+        font-size: 60px;
+    }
+    .LogAndRegAnimate{
+        width:100vw;
+    }
+     /* dashboard */
+    .containerDash{
+        background-size:100% 100% ;
+    }
+    .containerDashNav{
+        padding:5px;   
+    }
+    .tableLabels{
+        padding:0px;
+    }
+    p{
+        font-size:25pt;
+        margin:25px;
+    }
+    
+    /* job creator and editor */
+    .formCreate{
+        width:100vw;
+        height:75vh;
+    }
+    .navCreateBtn{
+        font-size:30pt;
+    }
+    .navCreateLabel{
+        font-size:60pt;
+    }
+
+    /* each job display */
+    .leftContent{
+        display: none;
+    }
+    .rightContent{
+        width:100vw;
+    }
+    .showTable{
+        width:100vw;
+        border:none;
+        box-shadow: none;
+    }
+    ul.showList{
+        height:50vh;
+        width:55vw;
+        overflow: scroll;
+        overflow-x: hidden;
+        margin-left:90px;
+        border:none;
+    }
+    .tdShow{
+        margin-top:30px;
+        font-size: 17pt;
+        width:50vw;
+    }
+    .volData{
+        width:80vw;
+        font-size: 16pt;
+    }
+    .volunteers{
+        width:90vw;
+    }
+    .btnShow{
+        transform:scale(.8);
+        margin:5px;
+    }
+    
+}
+
+/* medium */
+@media only screen and (min-width:768px){
+    .siteTitle{
+        font-size: 80px;
+    }
+    .LogAndRegAnimate{
+        width:90vw;
+    }
+     /* dashboard */
+    .containerDash{
+        background-size:100% 100% ;
+    }
+    .containerDashNav{
+        padding:5px;   
+    }
+    .tableLabels{
+        padding:5px;
+    }
+    p{
+        font-size:30pt;
+        margin:30px;
+    }
+    /* job creator and editor */
+    .formCreate{
+        width:100vw;
+        height:75vh;
+    }
+    .navCreateBtn{
+        font-size:30pt;
+    }
+    .navCreateLabel{
+        font-size:60pt;
+    }
+    /* each job display */
+    .leftContent{
+        display: none;
+    }
+    .rightContent{
+        width:100vw;
+    }
+    .showTable{
+        width:100vw;
+        border:none;
+        box-shadow: none;
+    }
+    ul.showList{
+        height:50vh;
+        width:80vw;
+        overflow: scroll;
+        overflow-x: hidden;
+        margin-left:190px;
+        border:none;
+    }
+    .tdShow{
+        margin-top:30px;
+        font-size: 17pt;
+        width:50vw;
+    }
+    .volData{
+        width:80vw;
+        font-size: 20pt;
+    }
+    .volunteers{
+        width:90vw;
+    }
+    .btnShow{
+        transform:scale(.8);
+        margin:5px;
+    }
+}
+
+/* large */
+@media only screen and (min-width:800px){
+    .tableLabels{
+        padding:5px;
+    }
+    p{
+        font-size:35pt;
+        margin:30px;
+    }
+    /* job creator and editor */
+    .formCreate{
+        width:100vw;
+        height:75vh;
+    }
+    .navCreateBtn{
+        font-size:30pt;
+    }
+    .navCreateLabel{
+        font-size:60pt;
+    }
+}
+/* full desktop */
+@media only screen and (min-width: 1200px) {
+    .containerDashNav{
+        padding-left:200px;
+        padding-right:200px;
+    }
+    p{
+        font-size: 40pt;
+        margin: 90px;
+    }
+    /* job creator and editor */
+    .formCreate{
+        width:100vw;
+        height:75vh;
+    }
+    .navCreateBtn{
+        font-size:30pt;
+    }
+    .navCreateLabel{
+        font-size:60pt;
+    }
+
+    /* job creator and editor */
+    .formCreate{
+        width:65vw;
+        height:75vh;
+    }
+    /* each job display */
+    .leftContent{
+        display: flex;
+    }
+    .rightContent{
+        height:100vh;
+        width:50vw;
+        display:flex;
+        align-items: flex-start;
+        justify-content: center;   
+    }
+    .showTable{
+        height:92vh;
+        width:35vw;
+        border:solid 12px rgba(68, 138, 146, 0.49);
+        border-top: none;
+        border-radius:4pt;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        
+        box-shadow:
+        0px 0px 0 rgba(0, 0, 0, 0.424),  
+        0px 0px 0 rgba(0, 0, 0, 0.424),
+        12px 10px 0 rgba(0, 0, 0, 0.424),
+        0px 0px 0 rgba(0, 0, 0, 0.304);
+    }
+    ul.showList{
+        border-bottom: rgba(0, 0, 0, 0.113) solid;
+        padding:5px;
+        margin:0;
+        height:65vh;
+        width:34vw;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .tdShow{
+        border-radius: 2pt;
+        margin:16px;
+        padding:5pt;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width:33vw;
+        height: 5vh;
+        font-size: 20pt;
+    }
+    .volData{
+        margin:5px;
+        background-color:rgba(226, 157, 19, 0.493);
+        width:32vw;
+        display:flex;
+        border-radius: 4pt;
+        justify-content: center;;
+    }
+    .volunteers{
+        height:30vh;
+        width:34.5vw;
+        overflow:scroll;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+    .btnShow{
+        transform:scale(1);
+        margin:5px;
+    }
 }

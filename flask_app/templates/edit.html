@@ -9,22 +9,6 @@
         <title>new</title>
     </head>
     <body>
-        <!-- Error message section -->
-        {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-        <div class="container-errorMes">
-            <div class=flashes>
-                {% for category, message in messages %}
-                <div class="alert alert-{{ category }}" role="alert">
-                    {{ message }}
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        {% endif %}
-        {% endwith %}
-        <!-- End error message section -->
-
         <div class="containerCreate">
             <div class="navCreate">
                 <a class="navCreateBtn" href="/dashboard">Dashboard</a>
@@ -32,23 +16,39 @@
                 <a class="navCreateBtn" href="/logout">Logout</a>
             </div>
                 <div class="containerFormCreate">
-                <form class="formCreate" action="/job/create" method="POST">
+                <!-- Error message section -->
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                <div class="flashContainer">
+                    <div class=flashes>
+                        {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}" role="alert">
+                            {{ message }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+                {% endwith %}
+                <!-- End error message section -->
+                <form class="formCreate" action="/job/update" method="POST">
+                    <input type="hidden" name="id" value = "{{ one_job.id }}">
                     <label for="name">Name</label>
-                    <input type="text" placeholder="{{ one_job.name }}" name="name" >
+                    <input type="text" value="{{ one_job.name }}" name="name" >
                     <label for="date">Date</label>
-                    <input type="date" placeholder="" required name="date" >
+                    <input type="date" value="{{ one_job.date }}" required name="date" >
                     <label for="num_volunteers">Number of Volunteers</label>
-                    <input type="number" placeholder="{{ one_job.num_volunteers }}" name="num_volunteers" >
+                    <input type="number" value="{{ one_job.num_volunteers }}" name="num_volunteers" >
                     <label for="start_time">Start Time</label>
                     <input type="time" value="{{ one_job.start_time }}" required name="start_time">
                     <label for="time">End Time</label>
                     <input type="time" value="{{ one_job.end_time }}" required name="end_time" >
                     <label for="location">Location</label>
-                    <input type="text" placeholder="{{ one_job.location }}" name="location" >
+                    <input type="text" value="{{ one_job.location }}" name="location" >
                     <label for="description">Description</label>
                     <textarea class="edit-textarea" placeholder="At least 20 characters" rows="10" name="description" type="input">{{ one_job.description }}</textarea>
                     <div class="button">
-                        <button class="indexBtn" type="submit">submit</button>
+                        <button class="indexBtn" type="submit">Submit</button>
                     </div>
                 </form>
             </div>
