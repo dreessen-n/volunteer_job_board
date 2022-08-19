@@ -16,7 +16,6 @@ class Job:
     def __init__(self,data):
         self.id = data['id']
         self.name = data['name']
-#        self.date = data['date']
         self.num_volunteers = data['num_volunteers']
         self.start_time = data['start_time']
         self.end_time = data['end_time']

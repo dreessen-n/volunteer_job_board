@@ -21,7 +21,6 @@ def create_new_job():
     # the keys must match exactly to the var in the query set
     data = {
         'name': request.form['name'],
-#        'date': request.form['date'],
         'num_volunteers': request.form['num_volunteers'],
         'start_time': request.form['start_time'],
         'end_time': request.form['end_time'],
@@ -118,7 +117,6 @@ def update_job():
     data = {
         'id': int(request.form['id']),
         'name': request.form['name'],
-#        'date': request.form['date'],
         'num_volunteers': request.form['num_volunteers'],
         'start_time': request.form['start_time'],
         'end_time': request.form['end_time'],
