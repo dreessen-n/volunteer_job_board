@@ -33,14 +33,12 @@
                 <form class="formCreate" action="/job/create" method="POST">
                     <label for="name">Name</label>
                     <input type="text" placeholder="job title" name="name" >
-                    <label for="date">Date</label>
-                    <input type="date" placeholder="" required name="date" >
                     <label for="num_volunteers">Number of Volunteers</label>
                     <input type="number" placeholder="qty of Volunteers" name="num_volunteers" >
                     <label for="start_time">Start Time</label>
-                    <input type="time" placeholder="" required name="start_time" >
+                    <input type="datetime-local" placeholder="" required name="start_time" >
                     <label for="time">End Time</label>
-                    <input type="time" placeholder="" required name="end_time" >
+                    <input type="datetime-local" placeholder="" required name="end_time" >
                     <label for="location">Location</label>
                     <input type="text" placeholder="At least 5 characters" name="location" >
                     <label for="description">Description</label>
