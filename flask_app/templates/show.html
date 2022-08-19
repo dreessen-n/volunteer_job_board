@@ -58,8 +58,8 @@
                             </li>
                             {% endif %}
                             {% endif %}
-                        <li class="tdShow"><span>Start Date & Time:</span> {{ one_job.start_time.strftime('%m-%d-%Y - %I:%M %p') }}</li>
-                        <li class="tdShow"><span>End Date & Time:</span> {{ one_job.end_time.strftime('%m-%d-%Y - %I:%M %p') }}</li>
+                        <li class="tdShow"><span>Start Date & Time:</span> {{ one_job.start_time.strftime('%m-%d-%Y - %-I:%M %p') }}</li>
+                        <li class="tdShow"><span>End Date & Time:</span> {{ one_job.end_time.strftime('%m-%d-%Y - %-I:%M %p') }}</li>
                         <li class="tdShow"><span>Number of Volunteers:</span> {{ one_job.num_volunteers }}</li>
                         <li class="tdShow"><span>Location:</span> {{ one_job.location }}</li>
                         <li class="tdShow"><span>Description:</span> {{ one_job.description }}</li>
