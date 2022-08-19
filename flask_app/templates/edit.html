@@ -37,10 +37,10 @@
                     <input type="text" value="{{ one_job.name }}" name="name" >
                     <label for="num_volunteers">Number of Volunteers</label>
                     <input type="number" value="{{ one_job.num_volunteers }}" name="num_volunteers" >
-                    <label for="start_time">Start Date & Time</label>
-                    <input type="datetime-local" value="{{ one_job.start_time }}" required name="start_time">
-                    <label for="time">End Date & Time</label>
-                    <input type="datetime-local" value="{{ one_job.end_time }}" required name="end_time" >
+                    <label class="formDate" for="start_time">Start Date & Time</label>
+                    <input class="formDate" type="datetime-local" value="{{ one_job.start_time }}" required name="start_time">
+                    <label class="formDate" for="time">End Date & Time</label>
+                    <input class="formDate" type="datetime-local" value="{{ one_job.end_time }}" required name="end_time" >
                     <label for="location">Location</label>
                     <input type="text" value="{{ one_job.location }}" name="location" >
                     <label for="description">Description</label>

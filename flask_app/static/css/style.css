@@ -397,7 +397,7 @@ th{
 }
 .formCreate{
     margin:40px;
-    padding:70px;
+    padding:40px;
     border-radius: 3pt;
 
     width:45vw;
@@ -405,6 +405,10 @@ th{
     display: flex;
     flex-direction: column;
     background-color: blanchedalmond;
+}
+.formDate{
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 input, textarea{
     background:transparent;
