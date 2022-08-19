@@ -41,7 +41,7 @@ DROP TABLE IF EXISTS `volunteer_job_board`.`jobs` ;
 CREATE TABLE IF NOT EXISTS `volunteer_job_board`.`jobs` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NULL,
-  `date` DATETIME NULL,
+  `date` DATE NULL,
   `num_volunteers` INT NULL,
   `start_time` TIME NULL,
   `end_time` TIME NULL,
