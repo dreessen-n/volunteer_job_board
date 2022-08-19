@@ -17,6 +17,7 @@
                     <i class="fas fa-times"></i>
                 </button>
                 <button onclick="openNav()" id="open">
+                    menu<br />
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
@@ -32,28 +33,33 @@
                 <div class='showTable'>
                     <ul class="showList">
                         {% if (signups | length >= one_job.num_volunteers) %}
-                        <li class="tdShow"><span>Status:</span> FULL</li>
+                        <li class="tdShow-status"><span>Status:</span> FULL</li>
                         {% else %}
-                        <li class="tdShow"><span>Status:</span> OPEN</li>
+                        <li class="tdShow-status"><span>Status:</span> OPEN</li>
                         {% endif %}
+                        <!-- if user is signuped; they see button to unsignup -->
                         {% if session['id'] in signups | map(attribute='user_id') %}
                         <li class="tdShow"><form action="/signup/delete" method="POST">
-                            <input type="hidden" name="job_id" value="{{one_job.id}}">
-                            <input type="hidden" name="user_id" value="{{session['id']}}">
-                            <button type="submit" class="signDownBtn">Withdraw</button>
-                        </form></li>
-                        {% else %}
-                        <li class="tdShow">
-                            <form action="/signup" method="POST">
                                 <input type="hidden" name="job_id" value="{{one_job.id}}">
                                 <input type="hidden" name="user_id" value="{{session['id']}}">
-                                <button type="submit" class="signUpBtn">Sign-Up</button>
-                            </form>
-                        </li>
-                        {% endif %}
-                        <li class="tdShow"><span>Date:</span> {{ one_job.date.strftime('%m-%d-%Y') }}</li>
-                        <li class="tdShow"><span>Start Time:</span> {{ one_job.start_time }}</li>
-                        <li class="tdShow"><span>End Time:</span> {{ one_job.end_time }}</li>
+                                <button type="submit" class="signDownBtn">Withdraw</button>
+                            </form></li>
+                            {% else %}
+                            <!-- If signups == num_volunteers then signup btn doesn't display and says job full -->
+                            {% if (signups | length == one_job.num_volunteers) %}
+                            <li class="tdShow-status">No more voluteers required at this time</li>
+                            {% else %}
+                            <li class="tdShow">
+                                <form action="/signup" method="POST">
+                                    <input type="hidden" name="job_id" value="{{one_job.id}}">
+                                    <input type="hidden" name="user_id" value="{{session['id']}}">
+                                    <button type="submit" class="signUpBtn">Sign-Up</button>
+                                </form>
+                            </li>
+                            {% endif %}
+                            {% endif %}
+                        <li class="tdShow"><span>Start Date & Time:</span> {{ one_job.start_time.strftime('%m-%d-%Y - %-I:%M %p') }}</li>
+                        <li class="tdShow"><span>End Date & Time:</span> {{ one_job.end_time.strftime('%m-%d-%Y - %-I:%M %p') }}</li>
                         <li class="tdShow"><span>Number of Volunteers:</span> {{ one_job.num_volunteers }}</li>
                         <li class="tdShow"><span>Location:</span> {{ one_job.location }}</li>
                         <li class="tdShow"><span>Description:</span> {{ one_job.description }}</li>

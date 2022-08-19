@@ -397,7 +397,7 @@ th{
 }
 .formCreate{
     margin:40px;
-    padding:70px;
+    padding:40px;
     border-radius: 3pt;
 
     width:45vw;
@@ -405,6 +405,10 @@ th{
     display: flex;
     flex-direction: column;
     background-color: blanchedalmond;
+}
+.formDate{
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 input, textarea{
     background:transparent;
@@ -656,6 +660,19 @@ ul.showList{
     width:33vw;
     height: 5vh;
     font-size: 20pt;
+}
+.tdShow-status{
+    border-radius: 2pt;
+    margin:16px;
+    padding:5pt;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:33vw;
+    height: 5vh;
+    font-size: 20pt;
+    color: maroon;
 }
 .signUpBtn{
     background-color:rgba(0, 128, 0, 0.265);

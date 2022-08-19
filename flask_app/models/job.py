@@ -16,7 +16,6 @@ class Job:
     def __init__(self,data):
         self.id = data['id']
         self.name = data['name']
-        self.date = data['date']
         self.num_volunteers = data['num_volunteers']
         self.start_time = data['start_time']
         self.end_time = data['end_time']
@@ -32,7 +31,7 @@ class Job:
     @classmethod
     def create_job(cls,data):
         """Create a job"""
-        query = "INSERT INTO jobs (name, date, num_volunteers, start_time, end_time, location, description, user_id) VALUES (%(name)s, %(date)s, %(num_volunteers)s, %(start_time)s, %(end_time)s, %(location)s, %(description)s, %(user_id)s);"
+        query = "INSERT INTO jobs (name, num_volunteers, start_time, end_time, location, description, user_id) VALUES (%(name)s, %(num_volunteers)s, %(start_time)s, %(end_time)s, %(location)s, %(description)s, %(user_id)s);"
         return connectToMySQL(cls.db).query_db(query,data)
 
     # CRUD READ METHODS -- Modified for many to many
@@ -41,7 +40,7 @@ class Job:
         """Get all the jobs in db"""
         query = '''SELECT * FROM jobs
                 JOIN users AS creators ON jobs.user_id = creators.id
-                ORDER BY jobs.date ASC;'''
+                ORDER BY jobs.start_time ASC;'''
         results = connectToMySQL(cls.db).query_db(query)
         all_jobs = []
         if not results:
@@ -97,7 +96,7 @@ class Job:
     @classmethod
     def update_job(cls,data):
         """Update the job"""
-        query = "UPDATE jobs SET name=%(name)s, date=%(date)s, num_volunteers=%(num_volunteers)s, start_time=%(start_time)s, end_time=%(end_time)s, location=%(location)s, description=%(description)s  WHERE jobs.id=%(id)s;"
+        query = "UPDATE jobs SET name=%(name)s, num_volunteers=%(num_volunteers)s, start_time=%(start_time)s, end_time=%(end_time)s, location=%(location)s, description=%(description)s  WHERE jobs.id=%(id)s;"
         return connectToMySQL(cls.db).query_db(query,data)
 
     # CRUD DELETE METHODS
