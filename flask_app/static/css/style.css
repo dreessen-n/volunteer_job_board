@@ -644,35 +644,49 @@ nav ul li + li + li +li+li+li{
 ul.showList{
     border-bottom: #000 solid;
     padding:5px;
-    height:60vh;
     width:34vw;
     display:flex;
     flex-direction: column;
 }
+li{
+    text-align: center;
+}
 .tdShow{
     border-radius: 2pt;
-    margin:16px;
     padding:5pt;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width:33vw;
-    height: 5vh;
+    height:6vh;
+    font-size: 20pt;
+}
+.tdShowDescription{
+    border: rgba(0, 0, 0, 0.053) solid 1px;
     font-size: 20pt;
 }
 .tdShow-status{
     border-radius: 2pt;
-    margin:16px;
     padding:5pt;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width:33vw;
-    height: 5vh;
     font-size: 20pt;
     color: maroon;
+}
+.tdShow-statusOpen{
+    border-radius: 2pt;
+    padding:5pt;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:33vw;
+    font-size: 20pt;
+    color: rgba(21, 110, 10, 0.823);
 }
 .signUpBtn{
     background-color:rgba(0, 128, 0, 0.265);
@@ -706,6 +720,7 @@ ul.showList{
 }
 span{
     background-color:rgba(226, 157, 19, 0.493);
+    height:5vh;
     width:15vw;
     display:flex;
     border-radius: 4pt;
@@ -725,9 +740,7 @@ span{
     justify-content: center;
 }
 
-li{
-    text-align: center;
-}
+
 
 /* responsiveness using media queries */
 /* absolutely tiny*/
@@ -738,6 +751,7 @@ li{
         }
         .LogAndRegAnimate{
             width:100vw;
+            height:75vh;
         }
         /* dashboard */
         .containerDash{
@@ -825,6 +839,8 @@ li{
     }
     .LogAndRegAnimate{
         width:100vw;
+        height:65vh;
+
     }
     /* dashboard */
     .containerDash{
@@ -899,6 +915,7 @@ li{
     }
     .LogAndRegAnimate{
         width:100vw;
+        height:65vh;
     }
      /* dashboard */
     .containerDash{
@@ -973,6 +990,7 @@ li{
     }
     .LogAndRegAnimate{
         width:90vw;
+        height:65vh;
     }
      /* dashboard */
     .containerDash{
