@@ -39,7 +39,7 @@
                         <td class="tdDash">{{ r.name }}</td>
                         <td class="tdDash">{{ r.start_time.strftime('%m-%d-%Y') }}</td>
                         <td class="tdDash">{{ r.location }}</td>
-                        <td class="tdDash"><a class="viewJob" href="/job/show/{{r.id}}" role="button">View</a></td>
+                        <td class="tdDash"><a class="viewJob" href="/job/show_past/{{r.id}}" role="button">View</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>

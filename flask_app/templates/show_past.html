@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+    <title>show</title>
+</head>
+<body>
+    <div class="containerShow" id="containerShow">
+        <div class="circle-container">
+            <div class="circle">
+                <button onclick="closeNav()" id="close">
+                    <i class="fas fa-times"></i>
+                </button>
+                <button onclick="openNav()" id="open">
+                    menu<br />
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="leftContent">
+                <h2 class="jobTitle0">J o b  +  T i t l e </h2>
+                <h2 class='jobTitle'>{{ one_job.name }}</h2>
+                <div class="jobImage">
+                </div>
+            </div>
+            <div class="rightContent">
+                <div class='showTable'>
+                    <ul class="showList">
+                        <li class="tdShow-status"><span>Status:</span> CLOSED - Past Job</li>
+                        <li class="tdShow"><span>Start Date & Time:</span></li>
+                        <li class="tdShow">{{ one_job.start_time.strftime('%m-%d-%Y - %-I:%M %p') }}</li>
+                        <li class="tdShow"><span>End Date & Time:</span> </li>
+                        <li class="tdShow">{{ one_job.end_time.strftime('%m-%d-%Y - %-I:%M %p') }}</li>
+                        <li class="tdShow"><span>Number of Volunteers:</span> </li>
+                        <li class="tdShow">{{ one_job.num_volunteers }}</li>
+                        <li class="tdShow"><span>Location:</span> </li>
+                        <li class="tdShow">{{ one_job.location }}</li>
+                        <li class="tdShow"><span>Description:</span></li>
+                        <li class="tdShowDescription"> {{ one_job.description }}</li>
+                    </ul>
+                    <h3 class="vol" >Volunteers</h3>
+                    <ul class="volunteers">
+                    {% if session['id'] == one_job.creator.id %}
+                    {%  for c in signups %}
+                        <li class="tdShowVol">
+                            <span class="volData">{{c.users_who_signuped.first_name}} {{c.users_who_signuped.last_name}} | email: {{c.users_who_signuped.email}} | phone: {{c.users_who_signuped.phone}}</span>
+                        </li>
+                    {% endfor %}
+                    {% else %}
+                    {%  for c in signups %}
+                        <li class="tdShow">
+                            <span class="volData">{{c.users_who_signuped.first_name}}</span>
+                        </li>
+                    {% endfor %}
+                    {% endif %}
+                    </ul>
+                </div>
+            </div>  
+            </div>
+    </div>
+    <nav>
+        <ul>
+            <li><a class="btnShow" href="/dashboard">Dashboard</a></li>
+            <li><a class="btnShow" href="/logout">Logout</a></li>
+            <!-- delete button -->
+            {% if session['id'] == one_job.creator.id %}
+            <li> <form action="/job/delete/{{one_job.id}}" method="POST">
+                <input type="hidden" name="id" value="{{one_job.id}}">
+                <button type="submit" class="btnShow">Delete Job</button>
+            </form></li>
+            {% endif %}
+            <!-- Edit button -->
+            {% if session['id'] == one_job.creator.id %}
+            <li><a class="btnShow" href="/job/edit/{{one_job.id}}" role="button">Edit Job</a></li>
+            {% endif %}
+            <!-- signup button -->
+            <!-- if user is signuped; they see button to
+                unsignup -->
+            
+        </ul>
+    </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='/js/script.js') }}"></script>
+
+</body>
+</html>

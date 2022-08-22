@@ -105,6 +105,22 @@ def job_show_one(job_id):
     # Call classmethods and render_template edit template with data filled in
     return render_template('show.html', one_job=job.Job.get_one_job(data), user=user.User.get_user_by_id(data_user), signups=signup.Signup.get_job_signups(data))
 
+@app.route('/job/show_past/<int:job_id>')
+def job_show_past_one(job_id):
+    """Show the job on a page"""
+    # Check that user is logged in
+    if 'id' not in session:
+        flash("Please register or login to continue", "danger")
+        return redirect('/')
+    # Create data dict based on job_id
+    # The keys must match exactly to the var in the query set
+    data = { 'id': job_id }
+    # Create additonal data dict for user
+    data_user = { 'id': session['id'] }
+    # Call classmethods and render_template edit template with data filled in
+    return render_template('show_past.html', one_job=job.Job.get_one_job(data), user=user.User.get_user_by_id(data_user), signups=signup.Signup.get_job_signups(data))
+
+
 # CRUD UPDATE ROUTES
 # Show job to edit with populated info
 @app.route('/job/edit/<int:job_id>')
