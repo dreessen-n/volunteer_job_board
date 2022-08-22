@@ -67,6 +67,29 @@ def dashboard():
     print(all_jobs)
     return render_template('dashboard.html', one_user=one_user, all_jobs=all_jobs)
 
+
+@app.route('/past')
+def past_jobs():
+    """Past Jobs"""
+    if 'id' not in session:
+        flash("Please register or login to continue", "danger")
+        return redirect('/')
+    # Create data set to query user based on id to get name to display
+    data = {
+        'id': session['id']
+    }
+    # Pass the data dict to create_user method in class
+    one_user = user.User.get_user_by_id(data)
+    if one_user:
+        session['email'] = one_user.email
+        session['first_name'] = one_user.first_name
+        session['last_name'] = one_user.last_name
+        session['phone'] = one_user.phone
+    # Add all_jobs to the dashboard
+    all_jobs = job.Job.get_all_past_jobs()
+    print(all_jobs)
+    return render_template('past.html', one_user=one_user, all_jobs=all_jobs)
+
 @app.route('/job/show/<int:job_id>')
 def job_show_one(job_id):
     """Show the job on a page"""

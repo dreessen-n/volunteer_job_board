@@ -66,6 +66,36 @@ class Job:
         return all_jobs
 
     @classmethod
+    def get_all_past_jobs(cls):
+        """Get all the jobs in db before current date"""
+        query = '''SELECT * FROM jobs
+                JOIN users AS creators ON jobs.user_id = creators.id
+                WHERE jobs.start_time < current_timestamp()
+                ORDER BY jobs.start_time ASC;'''
+        results = connectToMySQL(cls.db).query_db(query)
+        all_jobs = []
+        if not results:
+            return all_jobs
+        for r in results:
+            job = (cls(r))
+            # Create user_data dict for the creator of job
+            user_data = {
+                'id': r['creators.id'],
+                'first_name': r['first_name'],
+                'last_name': r['last_name'],
+                'email': r['email'],
+                'phone': r['phone'],
+                'password': r['password'],
+                'created_at': r['creators.created_at'],
+                'updated_at': r['creators.updated_at']
+            }
+            one_user = user.User(user_data)
+            # Set one_user to creator in job
+            job.creator = one_user
+            all_jobs.append(job)
+        return all_jobs
+
+    @classmethod
     def get_one_job(cls,data):
         """Get one job to display"""
         query = '''SELECT * FROM jobs
