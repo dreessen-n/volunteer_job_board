@@ -63,24 +63,24 @@ Coding Dojo Bootcamp 2022 - Group Project (w/David Gonzales)
 
 ![show_nonSign_nonCreator](https://user-images.githubusercontent.com/99504059/186049734-0805686f-e34c-444c-be3a-c8c0847f7ebe.png)
 
-## User viewing another user's posted job - status open and signed up
+### User viewing another user's posted job - status open and signed up
 
 > If user is signed up, the signup button changes to a red withdraw button
 
 ![show_open_SignedUp_nonCreator](https://user-images.githubusercontent.com/99504059/186049778-ca7a0ab6-ed7e-4f42-95e2-6ab1c3fb6629.png)
 
-## User viewing post that if full
+### User viewing post that if full
 
 > User will not see a signup button, but will see a message that no more volunteers are needed. If someone, withdraws, the button to signup will reappear.
 
 ![show_full_notSignedUp](https://user-images.githubusercontent.com/99504059/186054348-20470d79-6e57-42c9-b7af-ca73d85e6fd4.png)
 
-## User viewing past jobs - user post
+### User viewing past jobs - user post
 
 > User can see old jobs they posted with info
 
 ![showPast_creatorView](https://user-images.githubusercontent.com/99504059/186049784-d2130774-3952-44f5-8d57-4f6f13ef981d.png)
 
-## User viewing past jobs - other user post
+### User viewing past jobs - other user post
 
 ![showPast_nonCreator](https://user-images.githubusercontent.com/99504059/186049792-07717d19-77a5-4b24-b6d0-ff9f41014d5c.png)
