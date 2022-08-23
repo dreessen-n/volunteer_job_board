@@ -49,6 +49,12 @@ Coding Dojo Bootcamp 2022 - Group Project (w/David Gonzales)
 
 ![show_open_SignedUp_nonCreator](https://user-images.githubusercontent.com/99504059/186049778-ca7a0ab6-ed7e-4f42-95e2-6ab1c3fb6629.png)
 
+## User viewing past jobs - user post
+
+> User can see old jobs they posted with info
+
 ![showPast_creatorView](https://user-images.githubusercontent.com/99504059/186049784-d2130774-3952-44f5-8d57-4f6f13ef981d.png)
+
+## User viewing past jobs - other user post
 
 ![showPast_nonCreator](https://user-images.githubusercontent.com/99504059/186049792-07717d19-77a5-4b24-b6d0-ff9f41014d5c.png)
