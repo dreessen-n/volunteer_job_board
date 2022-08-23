@@ -11,6 +11,10 @@ Coding Dojo Bootcamp 2022 - Group Project (w/David Gonzales)
 
 ## Dashboard - Current jobs
 
+> User can Add a job, navigate to past jobs or logout
+
+> Jobs order by date Ascending, so next closest date to current date is shown first
+
 ![dashboard](https://user-images.githubusercontent.com/99504059/186049464-d84fff7d-5b1f-447f-a756-1d3d1e0e84ec.png)
 
 ## Dashboard - Past jobs
