@@ -33,9 +33,11 @@ Coding Dojo Bootcamp 2022 - Group Project (w/David Gonzales)
 
 > User can edit and delete their post from menu
 
+![menu](https://user-images.githubusercontent.com/99504059/186051962-2e7211de-89e3-42f7-9bea-2aaa56835743.png)
+
 > User will not see edit and delete options for other user's post
 
-![menu](https://user-images.githubusercontent.com/99504059/186051962-2e7211de-89e3-42f7-9bea-2aaa56835743.png)
+![menu_other](https://user-images.githubusercontent.com/99504059/186053895-c748c5b0-ebfd-43d4-a618-ef94aee06e4f.png)
 
 ## Edit view
 
