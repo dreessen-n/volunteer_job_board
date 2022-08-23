@@ -25,6 +25,24 @@ Coding Dojo Bootcamp 2022 - Group Project (w/David Gonzales)
 
 ![past_dash](https://user-images.githubusercontent.com/99504059/186049508-f2451de1-b4bd-4dc8-ac86-cba4821c9dc0.png)
 
+## New job view
+
+![new](https://user-images.githubusercontent.com/99504059/186051884-0efbf8c2-969c-44b8-903a-8a223aca9f77.png)
+
+## Menu effect and Delete/Edit options for user post
+
+> User can edit and delete their post from menu
+
+> User will not see edit and delete options for other user's post
+
+![menu](https://user-images.githubusercontent.com/99504059/186051962-2e7211de-89e3-42f7-9bea-2aaa56835743.png)
+
+## Edit view
+
+> Fields are pre-polutated with stored info
+
+![edit](https://user-images.githubusercontent.com/99504059/186052079-76ab3430-977a-487c-8eac-114f77541dcc.png)
+
 ## Views
 
 ### User's posted job - status open and not signed up
