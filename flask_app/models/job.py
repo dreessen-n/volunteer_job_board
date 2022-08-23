@@ -71,7 +71,7 @@ class Job:
         query = '''SELECT * FROM jobs
                 JOIN users AS creators ON jobs.user_id = creators.id
                 WHERE jobs.start_time < current_timestamp()
-                ORDER BY jobs.start_time ASC;'''
+                ORDER BY jobs.start_time DESC;'''
         results = connectToMySQL(cls.db).query_db(query)
         all_jobs = []
         if not results:
